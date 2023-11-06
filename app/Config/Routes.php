@@ -9,14 +9,16 @@ use CodeIgniter\Router\RouteCollection;
 
 $routes->get('/', 'Home::index');
 $routes->get('home', 'Home::index');
-$routes->get("quemsomos", "Home::quemsomos");
-$routes->get("contato", "Home::contato");
-$routes->post("contatoEnviaEmail", "Home::contatoEnviaEmail");
-$routes->get("login", "Home::login");
-$routes->get("criarNovaConta", "Home::criarNovaConta");
-$routes->get("carrinho-compras", "Home::carrinhoCompras");
-$routes->get("carrinho-pagamento", "Home::carrinhoPagamento");
-$routes->get("produtoDetalhes/(:num)", "Home::produtoDetalhes/$1");
+$routes->group("Home", static function ($routes) {
+    $routes->get("sobreNos", "Home::sobreNos");
+    $routes->get("contato", "Home::contato");
+    $routes->post("contatoEnviaEmail", "Home::contatoEnviaEmail");
+    $routes->get("login", "Home::login");
+    $routes->get("criarNovaConta", "Home::criarNovaConta");
+    $routes->get("carrinho-compras", "Home::carrinhoCompras");
+    $routes->get("carrinho-pagamento", "Home::carrinhoPagamento");
+    $routes->get("produtoDetalhes/(:num)", "Home::produtoDetalhes/$1");
+});
 
 /**
  * Login
