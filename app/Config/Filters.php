@@ -47,7 +47,8 @@ class Filters extends BaseConfig
                         'carrinho-pagamento',
                         'produtoDetalhes',
                         'criarNovaConta',
-                        'login/',
+                        'Login/',
+                        'Login/*',
                 ]
             ]
             // 'honeypot',

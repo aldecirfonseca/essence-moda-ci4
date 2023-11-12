@@ -11,12 +11,12 @@ class Auth implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         if ((bool)session()->isLoggedIn != true) {
-            if ($_SERVER['REQUEST_URI'] != "/") {
-                $URL = explode("/", $_SERVER["REDIRECT_URL"]);
-                if($URL[1] != 'Home') {
+            //if ($_SERVER['REQUEST_URI'] != "/") {
+            //    $URL = explode("/", $_SERVER["REDIRECT_URL"]);
+            //    if($URL[1] != 'Home') {
                     return redirect()->to('/home');
-                };
-            }
+            //    };
+           // }
         }
     }
 
